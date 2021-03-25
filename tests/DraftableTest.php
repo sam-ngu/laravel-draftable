@@ -2,7 +2,7 @@
 
 namespace Acadea\Draftable\Tests;
 
-class ExampleTest extends TestCase
+class DraftableTest extends TestCase
 {
     /** @test */
     public function true_is_true()

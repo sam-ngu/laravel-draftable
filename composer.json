@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^7.4",
         "spatie/laravel-package-tools": "^1.4.3",
         "illuminate/contracts": "^8.0"
     },
@@ -35,7 +35,9 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Acadea\\Draftable\\Tests\\": "tests"
+            "Acadea\\Draftable\\Tests\\": "tests",
+            "Acadea\\Draftable\\Tests\\Database\\Factories\\": "tests/database/factories"
+
         }
     },
     "scripts": {

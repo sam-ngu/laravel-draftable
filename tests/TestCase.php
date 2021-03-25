@@ -33,9 +33,15 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
 
-        /*
-        include_once __DIR__.'/../database/migrations/create_laravel_draftable_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+        include_once __DIR__.'/../database/migrations/0000_00_00_000000_create_drafts_table.stub';
+        include_once __DIR__.'./database/migrations/0000_00_00_000000_create_posts_test_table.php.stub';
+        include_once __DIR__.'./database/migrations/0000_00_00_000001_create_comments_test_table.php.stub';
+        include_once __DIR__.'./database/migrations/0000_00_00_000002_create_tags_test_table.php.stub';
+        include_once __DIR__.'./database/migrations/0000_00_00_000003_create_comment_tag_pivot_table.php.stub';
+        (new \CreateDraftsTable())->up();
+        (new \CreatePostsTestTable())->up();
+        (new \CreateCommentsTestTable())->up();
+        (new \CreateTagsTestTable())->up();
+        (new \CreateCommentTagPivotTestTable())->up();
     }
 }

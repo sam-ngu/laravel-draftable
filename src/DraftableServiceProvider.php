@@ -19,7 +19,6 @@ class DraftableServiceProvider extends PackageServiceProvider
             ->name('laravel-draftable')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel_draftable_table')
-            ->hasCommand(DraftableCommand::class);
+            ->hasMigration('0000_00_00_000000_create_drafts_table');
     }
 }

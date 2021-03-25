@@ -4,14 +4,18 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDraftableTable extends Migration
+class CreateDraftsTable extends Migration
 {
     public function up()
     {
-        Schema::create('laravel-draftable_table', function (Blueprint $table) {
+        Schema::create('__drafts', function (Blueprint $table) {
             $table->id();
 
             // add fields
+            $table->string('draftable_type');
+            $table->foreignId('draftable_id');
+            $table->json('payload')->nullable();
+
 
             $table->timestamps();
         });
