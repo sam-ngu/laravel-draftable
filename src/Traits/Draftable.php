@@ -3,19 +3,16 @@
 
 namespace Acadea\Draftable\Traits;
 
-
 use Acadea\Draftable\Models\Draft;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Arr;
 
 trait Draftable
 {
-
     private function getNonPayloadAttributes()
     {
         return [$this->primaryKey, self::CREATED_AT, self::UPDATED_AT];
     }
-
 
     public function drafts()
     {
@@ -24,22 +21,18 @@ trait Draftable
 
     public function lastDraft()
     {
-
     }
 
     public function lastPublished()
     {
-
     }
 
     public function publishNow()
     {
-
     }
 
     public function scheduleToPublish($when)
     {
-
     }
 
     public static function fromDraft(Draft $draft)
@@ -50,10 +43,8 @@ trait Draftable
         return new self($draft->payload);
     }
 
-
     public static function createDraft(array $attributes)
     {
-
         $model = new self($attributes);
 
         $attributes = $model->getAttributes();
@@ -74,17 +65,18 @@ trait Draftable
 
                 return $isModelMethod && $hasNoArg;
             })->filter(function (\ReflectionMethod $method) {
-                try{
+                try {
                     $result = $method->invoke(new self());
-                    return $result instanceof Relation;
 
-                }catch (\Exception $exception){
+                    return $result instanceof Relation;
+                } catch (\Exception $exception) {
                     return false;
                 }
-            })->map(function (\ReflectionMethod $method){
+            })->map(function (\ReflectionMethod $method) {
                 // at this point $method will be relationship method
                 $result = $method->invoke(new self());
                 $reflection = new \ReflectionClass($result);
+
                 return [
                     'name' => $method->getName(),
                     'type' => $reflection->getShortName(),
@@ -100,24 +92,18 @@ trait Draftable
 
         /** @var Draft $draft */
         $draft = $model->drafts()->create([
-            'payload' => $excepted
+            'payload' => $excepted,
         ]);
 
 
         return $model;
-
-
     }
-
 
     public function allDrafts()
     {
-
     }
 
     public function getDrafts($query)
     {
-
     }
-
 }

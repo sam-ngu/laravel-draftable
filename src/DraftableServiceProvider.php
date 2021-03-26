@@ -4,7 +4,6 @@ namespace Acadea\Draftable;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Acadea\Draftable\Commands\DraftableCommand;
 
 class DraftableServiceProvider extends PackageServiceProvider
 {

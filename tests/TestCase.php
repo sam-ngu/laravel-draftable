@@ -2,9 +2,9 @@
 
 namespace Acadea\Draftable\Tests;
 
+use Acadea\Draftable\DraftableServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Acadea\Draftable\DraftableServiceProvider;
 
 class TestCase extends Orchestra
 {

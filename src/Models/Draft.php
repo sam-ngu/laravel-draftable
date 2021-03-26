@@ -3,7 +3,6 @@
 
 namespace Acadea\Draftable\Models;
 
-
 use Illuminate\Database\Eloquent\Model;
 
 class Draft extends Model
@@ -21,6 +20,4 @@ class Draft extends Model
     {
         return $this->morphTo('draftable');
     }
-
-
 }

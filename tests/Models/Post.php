@@ -3,17 +3,17 @@
 
 namespace Acadea\Draftable\Tests\Models;
 
-
 use Acadea\Draftable\Traits\Draftable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use Draftable, HasFactory;
+    use Draftable;
+    use HasFactory;
 
     protected $fillable = [
-        'title'
+        'title',
     ];
 
     public function comments()
@@ -25,6 +25,4 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class, 'comment_tag', 'post_id', 'tag_id');
     }
-
-
 }
