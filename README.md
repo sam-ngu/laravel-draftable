@@ -46,8 +46,13 @@ return [
 ## Usage
 
 ```php
-$laravel-draftable = new Acadea\Draftable();
-echo $laravel-draftable->echoPhrase('Hello, Acadea!');
+
+$post = new \Acadea\Draftable\Tests\Models\Post([
+
+]);
+
+$draft = $post->saveDraft();
+
 ```
 
 ## Testing
